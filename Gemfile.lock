@@ -109,6 +109,11 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.7)
+      actionpack (>= 3.1)
+      execjs
+      rails (>= 3.1)
+      railties (>= 3.1)
     tzinfo (0.3.37)
     warden (1.2.3)
       rack (>= 1.0)
@@ -125,3 +130,4 @@ DEPENDENCIES
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   thin
+  twitter-bootstrap-rails

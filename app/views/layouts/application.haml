@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %title
+      Kotelok
+  = stylesheet_link_tag "application", controller_path, :media => "all"
+  = javascript_include_tag "application", controller_path
+  = csrf_meta_tags
+%body
+= yield
