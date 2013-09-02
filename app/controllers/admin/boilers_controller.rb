@@ -1,2 +1,83 @@
 class Admin::BoilersController < Admin::AdminController
+  # GET /admin/boilers
+  # GET /admin/boilers.json
+  def index
+    @boilers = Boiler.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @boilers }
+    end
+  end
+
+  # GET /admin/boilers/1
+  # GET /admin/boilers/1.json
+  def show
+    @boiler = Boiler.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @boiler }
+    end
+  end
+
+  # GET /admin/boilers/new
+  # GET /admin/boilers/new.json
+  def new
+    @boiler = Boiler.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @boiler }
+    end
+  end
+
+  # GET /admin/boilers/1/edit
+  def edit
+    @boiler = Boiler.find(params[:id])
+  end
+
+  # POST /admin/boilers
+  # POST /admin/boilers.json
+  def create
+    @boiler = Boiler.new(params[:boiler])
+
+    respond_to do |format|
+      if @boiler.save
+        format.html { redirect_to [:admin, @boiler], notice: 'Boiler was successfully created.' }
+        format.json { render json: @boiler, status: :created, location: @boiler }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @boiler.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /admin/boilers/1
+  # PUT /admin/boilers/1.json
+  def update
+    @boiler = Boiler.find(params[:id])
+
+    respond_to do |format|
+      if @boiler.update_attributes(params[:boiler])
+        format.html { redirect_to [:admin, @boiler], notice: 'Boiler was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @boiler.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /admin/boilers/1
+  # DELETE /admin/boilers/1.json
+  def destroy
+    @boiler = Boiler.find(params[:id])
+    @boiler.destroy
+
+    respond_to do |format|
+      format.html { redirect_to admin_boilers_url }
+      format.json { head :no_content }
+    end
+  end
 end

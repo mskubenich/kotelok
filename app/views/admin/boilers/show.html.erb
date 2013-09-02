@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @boiler.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @boiler.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_boiler_path(@boiler) %> |
+<%= link_to 'Back', admin_boilers_path %>
