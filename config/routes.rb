@@ -1,4 +1,6 @@
 Kotelok::Application.routes.draw do
+  root to: 'boilers#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
