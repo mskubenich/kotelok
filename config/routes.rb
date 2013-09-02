@@ -1,4 +1,6 @@
 Kotelok::Application.routes.draw do
+  devise_for :users
+
   root to: 'boilers#index'
 
   # The priority is based upon order of creation:
