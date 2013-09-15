@@ -1,0 +1,10 @@
+= will_paginate @documentations, renderer: BootstrapPagination::Rails
+- @documentations.each do |doc|
+  title
+  = doc.title
+  %br
+  = link_to "детально", documentation_path(doc)
+  %hr
+
+
+= will_paginate @documentations, renderer: BootstrapPagination::Rails

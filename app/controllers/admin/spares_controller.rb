@@ -1,4 +1,4 @@
-class Admin::SparesController < ApplicationController
+class Admin::SparesController < Admin::AdminController
 
   def index
     @spares_grid = initialize_grid(Spare)

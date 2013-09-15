@@ -20,8 +20,8 @@
               = link_to 'Котлы', root_path
             %li{class: "#{'active' if @tab == 'spares'}"}
               = link_to 'Запчасти', spares_path
-            %li{class: "#{'active' if @tab == 'doc'}"}
-              = link_to 'Документация', '#'
+            %li{class: "#{'active' if @tab == 'docs'}"}
+              = link_to 'Документация', documentations_path
       .row-fluid
         .span2
           %ul.nav.nav-tabs.nav-stacked.non-print
@@ -38,7 +38,7 @@
               %li
                 = link_to 'Zapchasti', admin_spares_path
               %li
-                = link_to 'Documentation', "#"
+                = link_to 'Documentation', admin_documentations_path
           %hr
             email:
             %b

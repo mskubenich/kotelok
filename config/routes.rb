@@ -6,9 +6,11 @@ Kotelok::Application.routes.draw do
 
   resources :boilers, only: [:index, :show]
   resources :spares, only: [:index, :show]
+  resources :documentations, only: [:index, :show]
   namespace :admin do
     resources :boilers, except: :show
     resources :spares, except: :show
+    resources :documentations, except: :show
   end
 
   mount Ckeditor::Engine => '/ckeditor'
