@@ -28,6 +28,8 @@
             - if current_user
               %li
                 = link_to 'Выход', destroy_user_session_path, method: :delete
+              %li
+                = link_to 'Изменить пароль', edit_user_registration_path(current_user)
             - else
               %li
                 = link_to 'Вход администратора', new_user_session_path
