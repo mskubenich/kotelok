@@ -1,1 +1,20 @@
-boilers list for users
+= will_paginate @users, renderer: BootstrapPagination::Rails, inner_window: 0, outer_window: 0
+- @boilers.each do |boiler|
+  title
+  = boiler.title
+  %br
+  power
+  = boiler.power
+  %br
+  amount_of_space
+  = boiler.amount_of_space
+  %br
+  price
+  = boiler.price
+  %br
+  = raw boiler.preview
+  = link_to "детально", boiler_path(boiler)
+  %hr
+
+
+= will_paginate @users, renderer: BootstrapPagination::Rails, inner_window: 0, outer_window: 0

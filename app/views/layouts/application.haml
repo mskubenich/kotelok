@@ -16,19 +16,25 @@
           %a.brand{ href: "#" }
             Boilers
           %ul.nav
-            %li.active
-              = link_to  'На главную', root_path
-            %li
+            %li{class: "#{'active' if @tab == 'boilers'}"}
+              = link_to 'На главную', root_path
+            %li{class: "#{'active' if @tab == 'admin'}"}
               = link_to 'Админка', admin_boilers_path
       .row-fluid
         .span2
-          - if current_user
-            Вход выполнен
-            %hr
-            = current_user.email
-            %br
-            = link_to 'Выход', destroy_user_session_path, method: :delete
-          - else
-            = link_to 'Вход администратора', new_user_session_path
+          %ul.nav.nav-tabs.nav-stacked.non-print
+            - if current_user
+              %li
+                = link_to 'Выход', destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to 'Вход администратора', new_user_session_path
+          %ul.nav.nav-tabs.nav-stacked.non-print
+            %li
+              = link_to 'Boilers', admin_boilers_path
+            %li
+              = link_to 'Zapchasti', "#"
+            %li
+              = link_to 'Documentation', "#"
         .span10
           = yield

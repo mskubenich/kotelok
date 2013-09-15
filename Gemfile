@@ -11,6 +11,7 @@ gem "paperclip"
 gem "ckeditor", "~> 4.0.2"
 gem 'will_paginate'
 gem "wice_grid", '3.2.1'
+gem 'will_paginate-bootstrap'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -4,8 +4,9 @@ Kotelok::Application.routes.draw do
 
   root to: 'boilers#index'
 
+  resources :boilers, only: [:index, :show]
   namespace :admin do
-    resources :boilers
+    resources :boilers, except: :show
   end
 
   mount Ckeditor::Engine => '/ckeditor'

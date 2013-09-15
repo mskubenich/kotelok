@@ -9,7 +9,7 @@
     - g.column name: 'Amount', attribute: 'amount_of_space'
     - g.column name: 'Price', attribute: 'price'
     - g.column do |boiler|
-      - link_to('Show', [:admin, boiler], class: 'btn btn-mini')
+      - link_to('Show', boiler, class: 'btn btn-mini')
     - g.column do |boiler|
       - link_to('Edit', edit_admin_boiler_path(boiler), class: 'btn btn-mini btn-info')
     - g.column do |boiler|
