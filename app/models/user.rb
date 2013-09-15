@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable,
          :token_authenticatable
-  attr_accessible :email, :password, :remember_me, :password_confirmation
+  attr_accessible :email, :password, :remember_me, :password_confirmation, :phone, :address
 end

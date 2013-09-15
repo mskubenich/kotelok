@@ -29,7 +29,7 @@
               %li
                 = link_to 'Выход', destroy_user_session_path, method: :delete
               %li
-                = link_to 'Изменить пароль', edit_user_registration_path(current_user)
+                = link_to 'Profile', edit_user_registration_path(current_user)
             - else
               %li
                 = link_to 'Вход администратора', new_user_session_path
@@ -44,15 +44,15 @@
           %hr
             email:
             %b
-              sample@email.com
+              = admin.email
             %br
             phone:
             %b
-              12345678
+              = admin.phone
             %br
-            billing address:
+            address:
             %b
-              Palo Alto 12
+              = admin.address
         .span10
           .row-fluid
             - if flash[:error]
