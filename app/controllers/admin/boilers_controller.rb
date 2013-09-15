@@ -1,13 +1,7 @@
 class Admin::BoilersController < Admin::AdminController
-  # GET /admin/boilers
-  # GET /admin/boilers.json
-  def index
-    @boilers = Boiler.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @boilers }
-    end
+  def index
+    @boilers_grid = initialize_grid(Boiler)
   end
 
   # GET /admin/boilers/1

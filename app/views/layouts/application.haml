@@ -9,7 +9,7 @@
   = yield :assets
 %body
   .row-fluid
-    .span8.offset2
+    .span10.offset1
       %br
       .navbar
         .navbar-inner
@@ -21,7 +21,7 @@
             %li
               = link_to 'Админка', admin_boilers_path
       .row-fluid
-        .span3
+        .span2
           - if current_user
             Вход выполнен
             %hr
@@ -30,5 +30,5 @@
             = link_to 'Выход', destroy_user_session_path, method: :delete
           - else
             = link_to 'Вход администратора', new_user_session_path
-        .span9
+        .span10
           = yield
