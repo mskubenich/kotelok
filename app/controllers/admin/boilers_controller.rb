@@ -38,7 +38,7 @@ class Admin::BoilersController < Admin::AdminController
 
     respond_to do |format|
       if @boiler.save
-        format.html { redirect_to [:admin, @boiler], notice: 'Boiler was successfully created.' }
+        format.html { redirect_to @boiler, notice: 'Boiler was successfully created.' }
         format.json { render json: @boiler, status: :created, location: @boiler }
       else
         format.html { render action: "new" }
@@ -54,7 +54,7 @@ class Admin::BoilersController < Admin::AdminController
 
     respond_to do |format|
       if @boiler.update_attributes(params[:boiler])
-        format.html { redirect_to [:admin, @boiler], notice: 'Boiler was successfully updated.' }
+        format.html { redirect_to @boiler, notice: 'Boiler was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

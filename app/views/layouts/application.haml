@@ -17,9 +17,11 @@
             Boilers
           %ul.nav
             %li{class: "#{'active' if @tab == 'boilers'}"}
-              = link_to 'На главную', root_path
-            %li{class: "#{'active' if @tab == 'admin'}"}
-              = link_to 'Админка', admin_boilers_path
+              = link_to 'Котлы', root_path
+            %li{class: "#{'active' if @tab == 'spares'}"}
+              = link_to 'Запчасти', spares_path
+            %li{class: "#{'active' if @tab == 'doc'}"}
+              = link_to 'Документация', '#'
       .row-fluid
         .span2
           %ul.nav.nav-tabs.nav-stacked.non-print
@@ -29,12 +31,41 @@
             - else
               %li
                 = link_to 'Вход администратора', new_user_session_path
-          %ul.nav.nav-tabs.nav-stacked.non-print
-            %li
-              = link_to 'Boilers', admin_boilers_path
-            %li
-              = link_to 'Zapchasti', "#"
-            %li
-              = link_to 'Documentation', "#"
+          - if current_user
+            %ul.nav.nav-tabs.nav-stacked.non-print
+              %li
+                = link_to 'Boilers', admin_boilers_path
+              %li
+                = link_to 'Zapchasti', admin_spares_path
+              %li
+                = link_to 'Documentation', "#"
+          %hr
+            email:
+            %b
+              sample@email.com
+            %br
+            phone:
+            %b
+              12345678
+            %br
+            billing address:
+            %b
+              Palo Alto 12
         .span10
+          .row-fluid
+            - if flash[:error]
+              .alert.alert-error
+                %button.close{type: :button, 'data-dismiss' => 'alert'}
+                  &times;
+                = flash[:error]
+            - elsif flash[:success]
+              .alert.alert-success
+                %button.close{type: :button, 'data-dismiss' => 'alert'}
+                  &times;
+                = flash[:success]
+            - elsif flash[:notice]
+              .alert.alert-notice
+                %button.close{type: :button, 'data-dismiss' => 'alert'}
+                  &times;
+                = flash[:notice]
           = yield

@@ -1,0 +1,14 @@
+= will_paginate @spares, renderer: BootstrapPagination::Rails
+- @spares.each do |spare|
+  title
+  = spare.title
+  %br
+  price
+  = spare.price
+  %br
+  = raw spare.preview
+  = link_to "детально", spare_path(spare)
+  %hr
+
+
+= will_paginate @spares, renderer: BootstrapPagination::Rails

@@ -1,4 +1,4 @@
-= will_paginate @users, renderer: BootstrapPagination::Rails, inner_window: 0, outer_window: 0
+= will_paginate @boilers, renderer: BootstrapPagination::Rails
 - @boilers.each do |boiler|
   title
   = boiler.title
@@ -17,4 +17,4 @@
   %hr
 
 
-= will_paginate @users, renderer: BootstrapPagination::Rails, inner_window: 0, outer_window: 0
+= will_paginate @boilers, renderer: BootstrapPagination::Rails

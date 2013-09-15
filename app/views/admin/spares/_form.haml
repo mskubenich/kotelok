@@ -1,0 +1,31 @@
+- if @spare.errors.any?
+  - @spare.errors.full_messages.each do |msg|
+    .alert.alert-error
+      %button.close{type: :button, 'data-dismiss' => 'alert'}
+      = msg
+= form_for([:admin, @spare]) do |f|
+  .field
+    %label
+      Название:
+    %br
+    = f.text_field :title
+  .field
+    %label
+      Цена
+    %br
+    = f.number_field :price
+  .field
+    %label
+      Прев'ю
+    %br
+    = f.cktext_area :preview, :ckeditor => {:language => "ru"}
+  .field
+    %label
+      Описание
+    %br
+    = f.cktext_area :body, :ckeditor => {:language => "ru"}
+
+  .actions
+    = f.submit
+= content_for :assets do
+  = javascript_include_tag 'ckeditor/init'
