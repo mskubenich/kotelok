@@ -7,6 +7,9 @@ Kotelok::Application.routes.draw do
   namespace :admin do
     resources :boilers
   end
+
+  mount Ckeditor::Engine => '/ckeditor'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

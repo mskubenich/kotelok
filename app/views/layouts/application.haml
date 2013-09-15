@@ -6,23 +6,29 @@
   = stylesheet_link_tag "application", controller_path, :media => "all"
   = javascript_include_tag "application", controller_path
   = csrf_meta_tags
+  = yield :assets
 %body
-  .navbar
-    .navbar-inner
-      %a.brand{ href: "#" }
-        Boilers
-      %ul.nav
-        %li.active
-          = link_to  'На главную', root_path
-        %li
-          = link_to 'Админка', admin_boilers_path
-  - if current_user
-    Вход выполнен
-    %hr
-    = current_user.email
-    %br
-    = link_to 'Выход', destroy_user_session_path, method: :delete
-  - else
-    = link_to 'Вход администратора', new_user_session_path
-  %hr
-  = yield
+  .row-fluid
+    .span8.offset2
+      %br
+      .navbar
+        .navbar-inner
+          %a.brand{ href: "#" }
+            Boilers
+          %ul.nav
+            %li.active
+              = link_to  'На главную', root_path
+            %li
+              = link_to 'Админка', admin_boilers_path
+      .row-fluid
+        .span3
+          - if current_user
+            Вход выполнен
+            %hr
+            = current_user.email
+            %br
+            = link_to 'Выход', destroy_user_session_path, method: :delete
+          - else
+            = link_to 'Вход администратора', new_user_session_path
+        .span9
+          = yield
