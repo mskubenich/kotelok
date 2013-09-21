@@ -8,6 +8,6 @@
     - g.column do |doc|
       - link_to('Show', doc, class: 'btn btn-mini')
     - g.column do |doc|
-      - link_to('Edit', edit_admin_documentations_path(doc), class: 'btn btn-mini btn-info')
-    - g.column do |spare|
+      - link_to('Edit', edit_admin_documentation_path(doc), class: 'btn btn-mini btn-info')
+    - g.column do |doc|
       - link_to('Destroy', [:admin, doc], method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' })

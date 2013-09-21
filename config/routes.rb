@@ -4,8 +4,8 @@ Kotelok::Application.routes.draw do
 
   root to: 'boilers#index'
 
-  resources :boilers, only: [:index]
-  resources :spares, only: [:index]
+  resources :boilers, only: [:index, :show]
+  resources :spares, only: [:index, :show]
   resources :documentations, only: [:index, :show]
   namespace :admin do
     resources :boilers, except: :show
