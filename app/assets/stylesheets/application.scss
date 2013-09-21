@@ -13,3 +13,105 @@
  *= require twitter-bootstrap-static/sprites
  *= require wice_grid
  */
+
+.header{
+  height: auto;
+}
+
+.page-container{
+  -webkit-box-shadow: 0px 1px 9px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 1px 9px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 1px 9px rgba(50, 50, 50, 0.75);
+
+  background: #ed9017; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ed9017 4%, #f4b700 47%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%,#ed9017), color-stop(47%,#f4b700)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #ed9017 4%,#f4b700 47%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #ed9017 4%,#f4b700 47%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #ed9017 4%,#f4b700 47%); /* IE10+ */
+  background: linear-gradient(to right,  #ed9017 4%,#f4b700 47%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed9017', endColorstr='#f4b700',GradientType=1 ); /* IE6-9 */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.page-content{
+  background-color: white;
+}
+
+.header-right{
+  background: #ed9017; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ed9017 43%, #f4b700 95%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(43%,#ed9017), color-stop(95%,#f4b700)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ed9017 43%,#f4b700 95%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ed9017 43%,#f4b700 95%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ed9017 43%,#f4b700 95%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ed9017 43%,#f4b700 95%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed9017', endColorstr='#f4b700',GradientType=0 ); /* IE6-9 */
+
+  height: 100%;
+}
+
+.logo{
+  padding: 50px;
+  font-size: 100px;
+  float: left;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.header-right-1{
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.header-right-2{
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.header-right-3{
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+  padding: 10px;
+  padding-bottom: 80px
+}
+
+.navbar-inner, .nav-tabs{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.sidebar{
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.page{
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.title{
+  color: #666;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+table{
+  border-collapse: collapse;
+  td, th{
+    text-align: center;
+    border: 1px solid gray;
+  }
+  border: 1px solid gray !important;
+  border-radius: 9px !important;
+  overflow: hidden ;
+}

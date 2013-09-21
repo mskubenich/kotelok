@@ -8,13 +8,25 @@
   = csrf_meta_tags
   = yield :assets
 %body
+  %br
   .row-fluid
-    .span10.offset1
-      %br
+    .span10.offset1.page-container
+      .header
+        .row-fluid
+          .span8{style: 'padding: 20px'}
+            = image_tag 'logo.png', style: 'height: 120px; float: left '
+            .logo
+              KORAD
+            = image_tag 'kotel.png', style: 'height: 120px '
+          .span4.header-right
+            .header-right-1
+              Котли твердотопливні
+            .header-right-2
+              Виготовлення Ужгород
+            .header-right-3
+              095 1000 229
       .navbar
         .navbar-inner
-          %a.brand{ href: "#" }
-            Boilers
           %ul.nav
             %li{class: "#{'active' if @tab == 'boilers'}"}
               = link_to 'Котлы', root_path
@@ -22,25 +34,25 @@
               = link_to 'Запчасти', spares_path
             %li{class: "#{'active' if @tab == 'docs'}"}
               = link_to 'Документация', documentations_path
-      .row-fluid
-        .span2
+      .row-fluid.page-content
+        .span2.sidebar{style: 'height: 100%'}
           %ul.nav.nav-tabs.nav-stacked.non-print
             - if current_user
               %li
                 = link_to 'Выход', destroy_user_session_path, method: :delete
               %li
-                = link_to 'Profile', edit_user_registration_path(current_user)
+                = link_to 'Профиль', edit_user_registration_path(current_user)
             - else
               %li
                 = link_to 'Вход администратора', new_user_session_path
           - if current_user
             %ul.nav.nav-tabs.nav-stacked.non-print
               %li
-                = link_to 'Boilers', admin_boilers_path
+                = link_to 'Котлы', admin_boilers_path
               %li
-                = link_to 'Zapchasti', admin_spares_path
+                = link_to 'Запчасти', admin_spares_path
               %li
-                = link_to 'Documentation', admin_documentations_path
+                = link_to 'Руководства', admin_documentations_path
           %hr
             email:
             %b
@@ -53,7 +65,7 @@
             address:
             %b
               = admin.address
-        .span10
+        .span10.page
           .row-fluid
             - if flash[:error]
               .alert.alert-error
