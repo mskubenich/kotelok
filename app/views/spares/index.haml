@@ -1,13 +1,2 @@
-= will_paginate @spares, renderer: BootstrapPagination::Rails
-- @spares.each do |spare|
-  title
-  = spare.title
-  %br
-  price
-  = spare.price
-  %br
-  = raw spare.preview
-  %hr
-
-
-= will_paginate @spares, renderer: BootstrapPagination::Rails
+- if spare_page
+  = raw spare_page.body

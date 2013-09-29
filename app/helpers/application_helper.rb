@@ -7,4 +7,8 @@ module ApplicationHelper
     Boiler.first
   end
 
+  def spare_page
+    Spare.first
+  end
+
 end

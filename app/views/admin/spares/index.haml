@@ -1,14 +1,19 @@
+- if spare_page
+  = redirect_to edit_admin_spare_path(spare_page)
+- else
+  = link_to 'Создать страницу запчастей', new_admin_spare_path, class: 'btn btn-success'
 
-= link_to 'New Spare', new_admin_spare_path, class: 'btn btn-success'
-
-.grid
-  = grid(@spares_grid, upper_pagination_panel: true) do |g|
-    - g.blank_slate content_tag(:div, 'No records found')
-    - g.column name: 'Title', attribute: 'title'
-    - g.column name: 'Price', attribute: 'price'
-    - g.column do |spare|
-      - link_to('Show', spare, class: 'btn btn-mini')
-    - g.column do |spare|
-      - link_to('Edit', edit_admin_spare_path(spare), class: 'btn btn-mini btn-info')
-    - g.column do |spare|
-      - link_to('Destroy', [:admin, spare], method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' })
+-#
+-#= link_to 'New Spare', new_admin_spare_path, class: 'btn btn-success'
+-#
+-#.grid
+-#  = grid(@spares_grid, upper_pagination_panel: true) do |g|
+-#    - g.blank_slate content_tag(:div, 'No records found')
+-#    - g.column name: 'Title', attribute: 'title'
+-#    - g.column name: 'Price', attribute: 'price'
+-#    - g.column do |spare|
+-#      - link_to('Show', spare, class: 'btn btn-mini')
+-#    - g.column do |spare|
+-#      - link_to('Edit', edit_admin_spare_path(spare), class: 'btn btn-mini btn-info')
+-#    - g.column do |spare|
+-#      - link_to('Destroy', [:admin, spare], method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' })

@@ -1,7 +1,10 @@
 class Admin::SparesController < Admin::AdminController
 
   def index
-    @spares_grid = initialize_grid(Spare)
+    @spare = Spare.first
+    if @spare
+      redirect_to edit_admin_spare_path @spare
+    end
   end
 
   def show
@@ -21,7 +24,7 @@ class Admin::SparesController < Admin::AdminController
 
     respond_to do |format|
       if @spare.save
-        format.html { redirect_to @spare, notice: 'Spare was successfully created.' }
+        format.html { redirect_to spares_path, notice: 'Spare was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -33,7 +36,7 @@ class Admin::SparesController < Admin::AdminController
 
     respond_to do |format|
       if @spare.update_attributes(params[:spare])
-        format.html { redirect_to @spare, notice: 'Boiler was successfully updated.' }
+        format.html { redirect_to spares_path, notice: 'Spare was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
