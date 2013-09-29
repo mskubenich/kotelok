@@ -1,6 +1,4 @@
-- if spare_page
-  = redirect_to edit_admin_spare_path(spare_page)
-- else
+- unless spares_page
   = link_to 'Создать страницу запчастей', new_admin_spare_path, class: 'btn btn-success'
 
 -#

@@ -61,7 +61,7 @@
             %br
             = link_to 'Запчасти', admin_spares_path, class: 'info-bold'
             %br
-            = link_to 'Руководства', admin_documentations_path, class: 'info-bold'
+            = link_to 'Документация', admin_documentations_path, class: 'info-bold'
         .page
           - if flash[:error]
             .alert.alert-error
@@ -74,7 +74,7 @@
                 &times;
               = flash[:success]
           - elsif flash[:notice]
-            .alert.alert-notice
+            .alert.alert-success
               %button.close{type: :button, 'data-dismiss' => 'alert'}
                 &times;
               = flash[:notice]

@@ -11,4 +11,8 @@ module ApplicationHelper
     Spare.first
   end
 
+  def documentation_page
+    Documentation.first
+  end
+
 end

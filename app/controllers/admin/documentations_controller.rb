@@ -1,7 +1,10 @@
 class Admin::DocumentationsController < Admin::AdminController
 
   def index
-    @documentations_grid = initialize_grid(Documentation)
+    @doc = Documentation.first
+    if @doc
+      redirect_to edit_admin_documentation_path @doc
+    end
   end
 
   def show
@@ -21,7 +24,7 @@ class Admin::DocumentationsController < Admin::AdminController
 
     respond_to do |format|
       if @documentation.save
-        format.html { redirect_to @documentation, notice: 'Documentation was successfully created.' }
+        format.html { redirect_to documentations_path, notice: 'Documentation was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -33,7 +36,7 @@ class Admin::DocumentationsController < Admin::AdminController
 
     respond_to do |format|
       if @documentation.update_attributes(params[:documentation])
-        format.html { redirect_to @documentation, notice: 'Boiler was successfully updated.' }
+        format.html { redirect_to documentations_path, notice: 'Documentation was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
