@@ -34,61 +34,48 @@
             %br
             %span.info-bold
               mail:
-            admin.email
+            = admin.email
       .menu
         %ul
           %li{class: "#{'active' if @tab == 'boilers'}"}
-            = link_to 'Котлы', root_path
+            = link_to 'Котлы', root_path, class: 'info-bold'
           %li{class: "#{'active' if @tab == 'spares'}"}
-            = link_to 'Запчасти', spares_path
+            = link_to 'Запчасти', spares_path, class: 'info-bold'
           %li{class: "#{'active' if @tab == 'docs'}"}
-            = link_to 'Документация', documentations_path
-      .row-fluid.page-content
-        .span2.sidebar{style: 'height: 100%'}
-          %ul.nav.nav-tabs.nav-stacked.non-print
-            - if current_user
-              %li
-                = link_to 'Выход', destroy_user_session_path, method: :delete
-              %li
-                = link_to 'Профиль', edit_user_registration_path(current_user)
-            - else
-              %li
-                = link_to 'Вход администратора', new_user_session_path
+            = link_to 'Документация', documentations_path, class: 'info-bold'
+      .page-content
+        .sidebar
           - if current_user
-            %ul.nav.nav-tabs.nav-stacked.non-print
-              %li
-                = link_to 'Котлы', admin_boilers_path
-              %li
-                = link_to 'Запчасти', admin_spares_path
-              %li
-                = link_to 'Руководства', admin_documentations_path
-          %hr
-            %i.icon-envelope
-            %b
-              = admin.email
+            = link_to 'Выход', destroy_user_session_path, method: :delete, class: 'info-bold'
             %br
-            phone:
-            %b
-              = admin.phone
+            = link_to 'Профиль', edit_user_registration_path(current_user), class: 'info-bold'
+          - else
+            = link_to 'Вход администратора', new_user_session_path, class: 'info-bold'
+          - if current_user
             %br
-            address:
-            %b
-              = admin.address
-        .span10.page
-          .row-fluid
-            - if flash[:error]
-              .alert.alert-error
-                %button.close{type: :button, 'data-dismiss' => 'alert'}
-                  &times;
-                = flash[:error]
-            - elsif flash[:success]
-              .alert.alert-success
-                %button.close{type: :button, 'data-dismiss' => 'alert'}
-                  &times;
-                = flash[:success]
-            - elsif flash[:notice]
-              .alert.alert-notice
-                %button.close{type: :button, 'data-dismiss' => 'alert'}
-                  &times;
-                = flash[:notice]
+            %br
+            .info-bold.active
+              Редактировать:
+            %br
+            = link_to 'Котлы', admin_boilers_path, class: 'info-bold'
+            %br
+            = link_to 'Запчасти', admin_spares_path, class: 'info-bold'
+            %br
+            = link_to 'Руководства', admin_documentations_path, class: 'info-bold'
+        .page
+          - if flash[:error]
+            .alert.alert-error
+              %button.close{type: :button, 'data-dismiss' => 'alert'}
+                &times;
+              = flash[:error]
+          - elsif flash[:success]
+            .alert.alert-success
+              %button.close{type: :button, 'data-dismiss' => 'alert'}
+                &times;
+              = flash[:success]
+          - elsif flash[:notice]
+            .alert.alert-notice
+              %button.close{type: :button, 'data-dismiss' => 'alert'}
+                &times;
+              = flash[:notice]
           = yield
