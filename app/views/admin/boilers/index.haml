@@ -1,16 +1,4 @@
-
-= link_to 'New Boiler', new_admin_boiler_path, class: 'btn btn-success'
-
-.grid
-  = grid(@boilers_grid, upper_pagination_panel: true) do |g|
-    - g.blank_slate content_tag(:div, 'No records found')
-    - g.column name: 'Title', attribute: 'title'
-    - g.column name: 'Power', attribute: 'power'
-    - g.column name: 'Amount', attribute: 'amount_of_space'
-    - g.column name: 'Price', attribute: 'price'
-    - g.column do |boiler|
-      - link_to('Show', boiler, class: 'btn btn-mini')
-    - g.column do |boiler|
-      - link_to('Edit', edit_admin_boiler_path(boiler), class: 'btn btn-mini btn-info')
-    - g.column do |boiler|
-      - link_to('Destroy', [:admin, boiler], method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' })
+- if boiler_page
+  = redirect_to edit_admin_boiler_path(boiler_page)
+- else
+  = link_to 'New Boiler', new_admin_boiler_path, class: 'btn btn-success'

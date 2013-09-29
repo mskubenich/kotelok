@@ -1,17 +1,9 @@
 class Admin::BoilersController < Admin::AdminController
 
   def index
-    @boilers_grid = initialize_grid(Boiler)
-  end
-
-  # GET /admin/boilers/1
-  # GET /admin/boilers/1.json
-  def show
-    @boiler = Boiler.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @boiler }
+    @boiler = Boiler.first
+    if @boiler
+      redirect_to edit_admin_boiler_path @boiler
     end
   end
 
@@ -38,11 +30,9 @@ class Admin::BoilersController < Admin::AdminController
 
     respond_to do |format|
       if @boiler.save
-        format.html { redirect_to @boiler, notice: 'Boiler was successfully created.' }
-        format.json { render json: @boiler, status: :created, location: @boiler }
+        format.html { redirect_to boilers_path, notice: 'Boiler was successfully created.' }
       else
         format.html { render action: "new" }
-        format.json { render json: @boiler.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +44,7 @@ class Admin::BoilersController < Admin::AdminController
 
     respond_to do |format|
       if @boiler.update_attributes(params[:boiler])
-        format.html { redirect_to @boiler, notice: 'Boiler was successfully updated.' }
+        format.html { redirect_to boilers_path, notice: 'Boiler was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
