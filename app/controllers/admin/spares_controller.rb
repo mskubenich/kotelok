@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Admin::SparesController < Admin::AdminController
 
   def index
@@ -24,7 +26,7 @@ class Admin::SparesController < Admin::AdminController
 
     respond_to do |format|
       if @spare.save
-        format.html { redirect_to spares_path, notice: 'Spare was successfully created.' }
+        format.html { redirect_to spares_path, notice: 'Страница запчастей успешно создана.' }
       else
         format.html { render action: "new" }
       end
@@ -36,7 +38,7 @@ class Admin::SparesController < Admin::AdminController
 
     respond_to do |format|
       if @spare.update_attributes(params[:spare])
-        format.html { redirect_to spares_path, notice: 'Spare was successfully updated.' }
+        format.html { redirect_to spares_path, notice: 'Страница запчастей успешно обновлена.' }
       else
         format.html { render action: "edit" }
       end

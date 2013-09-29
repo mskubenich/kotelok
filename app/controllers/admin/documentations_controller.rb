@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Admin::DocumentationsController < Admin::AdminController
 
   def index
@@ -24,7 +26,7 @@ class Admin::DocumentationsController < Admin::AdminController
 
     respond_to do |format|
       if @documentation.save
-        format.html { redirect_to documentations_path, notice: 'Documentation was successfully created.' }
+        format.html { redirect_to documentations_path, notice: 'Страница документации успешно создана.' }
       else
         format.html { render action: "new" }
       end
@@ -36,7 +38,7 @@ class Admin::DocumentationsController < Admin::AdminController
 
     respond_to do |format|
       if @documentation.update_attributes(params[:documentation])
-        format.html { redirect_to documentations_path, notice: 'Documentation was successfully updated.' }
+        format.html { redirect_to documentations_path, notice: 'Страница документации успешно обновлена.' }
       else
         format.html { render action: "edit" }
       end

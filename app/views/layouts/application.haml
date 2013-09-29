@@ -46,6 +46,7 @@
       .page-content
         .sidebar
           - if current_user
+            %br
             = link_to 'Выход', destroy_user_session_path, method: :delete, class: 'info-bold'
             %br
             = link_to 'Профиль', edit_user_registration_path(current_user), class: 'info-bold'
@@ -79,3 +80,5 @@
                 &times;
               = flash[:notice]
           = yield
+      .footer.text-center
+        CORAD. Все права защищены &copy; 2013.
