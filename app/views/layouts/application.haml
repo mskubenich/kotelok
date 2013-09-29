@@ -23,6 +23,8 @@
               Изготовление котлов
               %br
               твердотопливных
+            %br
+            %br
             %span.info-bold
               Контакты:
             %br
@@ -33,28 +35,14 @@
             %span.info-bold
               mail:
             admin.email
-
-        -#.row-fluid
-        -#  .span8{style: 'padding: 20px'}
-        -#    = image_tag 'logo.png', style: 'height: 120px; float: left '
-        -#
-        -#    = image_tag 'kotel.png', style: 'height: 120px '
-        -#  .span4.header-right
-        -#    .header-right-1
-        -#      Котли твердотопливні
-        -#    .header-right-2
-        -#      Виготовлення Ужгород
-        -#    .header-right-3
-        -#      095 1000 229
-      .navbar
-        .navbar-inner
-          %ul.nav
-            %li{class: "#{'active' if @tab == 'boilers'}"}
-              = link_to 'Котлы', root_path
-            %li{class: "#{'active' if @tab == 'spares'}"}
-              = link_to 'Запчасти', spares_path
-            %li{class: "#{'active' if @tab == 'docs'}"}
-              = link_to 'Документация', documentations_path
+      .menu
+        %ul
+          %li{class: "#{'active' if @tab == 'boilers'}"}
+            = link_to 'Котлы', root_path
+          %li{class: "#{'active' if @tab == 'spares'}"}
+            = link_to 'Запчасти', spares_path
+          %li{class: "#{'active' if @tab == 'docs'}"}
+            = link_to 'Документация', documentations_path
       .row-fluid.page-content
         .span2.sidebar{style: 'height: 100%'}
           %ul.nav.nav-tabs.nav-stacked.non-print
