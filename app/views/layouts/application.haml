@@ -12,19 +12,40 @@
   .row-fluid
     .span10.offset1.page-container
       .header
-        .row-fluid
-          .span8{style: 'padding: 20px'}
-            = image_tag 'logo.png', style: 'height: 120px; float: left '
-            .logo
-              KORAD
-            = image_tag 'kotel.png', style: 'height: 120px '
-          .span4.header-right
-            .header-right-1
-              Котли твердотопливні
-            .header-right-2
-              Виготовлення Ужгород
-            .header-right-3
-              095 1000 229
+        .header-image
+        .header-gradient
+        .logo
+        .logo-text
+          KORAD
+        .header-info
+          .text
+            %span.info-bold
+              Изготовление котлов
+              %br
+              твердотопливных
+            %span.info-bold
+              Контакты:
+            %br
+            %span.info-bold
+              тел.:
+            = admin.phone
+            %br
+            %span.info-bold
+              mail:
+            admin.email
+
+        -#.row-fluid
+        -#  .span8{style: 'padding: 20px'}
+        -#    = image_tag 'logo.png', style: 'height: 120px; float: left '
+        -#
+        -#    = image_tag 'kotel.png', style: 'height: 120px '
+        -#  .span4.header-right
+        -#    .header-right-1
+        -#      Котли твердотопливні
+        -#    .header-right-2
+        -#      Виготовлення Ужгород
+        -#    .header-right-3
+        -#      095 1000 229
       .navbar
         .navbar-inner
           %ul.nav
@@ -54,7 +75,7 @@
               %li
                 = link_to 'Руководства', admin_documentations_path
           %hr
-            email:
+            %i.icon-envelope
             %b
               = admin.email
             %br
