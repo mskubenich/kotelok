@@ -13,6 +13,7 @@ Kotelok::Application.routes.draw do
     resources :spares, except: :show
     resources :documentations, except: :show
     resources :prices, except: :show
+    resources :gimages, except: [:edit, :update]
   end
 
   mount Ckeditor::Engine => '/ckeditor'

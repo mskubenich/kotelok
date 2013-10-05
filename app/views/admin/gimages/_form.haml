@@ -1,0 +1,17 @@
+- if @gimage.errors.any?
+  - @gimage.errors.full_messages.each do |msg|
+    .alert.alert-error
+      %button.close{type: :button, 'data-dismiss' => 'alert'}
+      = msg
+= form_for([:admin, @gimage]) do |f|
+  .field
+    %br
+    .fileupload.fileupload-new{'data-provides' => 'fileupload'}
+      .fileupload-preview.fileupload-exists.thumbnail{style: 'max-width: 200px; max-height: 150px; line-height: 20px;'}
+        = image_tag @gimage.file.url, style: 'max-width: 200px; max-height: 150px;'
+      %div
+        = f.file_field :file
+
+  .actions.text-center
+    %br
+    = f.submit 'Сохранить изменения', class: 'btn btn-success'
