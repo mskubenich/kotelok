@@ -1,0 +1,26 @@
+.login-form
+  %h2
+    Вход администратора
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    .row-fluid
+      .span3
+        Email
+      .span9
+        = f.email_field :email, :autofocus => true, class: 'span12'
+    .row-fluid
+      .span3
+        Пароль
+      .span9
+        = f.password_field :password, class: 'span12'
+    %hr
+    = if devise_mapping.rememberable?
+      .row-fluid
+        .span3
+          Запомнить меня
+        .span9
+          = f.check_box :remember_me
+    .row-fluid
+      .span12
+        .text-center
+          = f.submit "Войти", class: 'btn btn-success'
+-#= render "devise/shared/links"
