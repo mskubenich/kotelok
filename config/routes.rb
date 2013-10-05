@@ -1,5 +1,7 @@
 Kotelok::Application.routes.draw do
 
+  get "gallery/index"
+
   devise_for :users
 
   root to: 'boilers#index'

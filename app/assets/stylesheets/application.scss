@@ -198,3 +198,15 @@
   padding: 20px;
   margin-bottom: 20px;
 }
+
+#lightbox img{
+  max-width: 1500px;
+  max-height: 900px;
+  width: auto!important;
+  height: auto!important;
+}
+
+.lb-outerContainer, .lb-dataContainer{
+  max-width: 1520px;
+  max-height: 920px;
+}

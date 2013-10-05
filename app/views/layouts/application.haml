@@ -44,6 +44,8 @@
             = link_to 'Документация', documentations_path, class: 'info-bold'
           %li{class: "#{'active' if @tab == 'price'}"}
             = link_to 'Цены', prices_path, class: 'info-bold'
+          %li{class: "#{'active' if @tab == 'gallery'}"}
+            = link_to 'Галерея', gallery_index_path, class: 'info-bold'
       .page-content
         .sidebar
           - if current_user

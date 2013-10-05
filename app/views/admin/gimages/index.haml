@@ -1,3 +1,5 @@
+= javascript_include_tag 'lightbox/js/lightbox-2.6.min.js'
+= stylesheet_link_tag 'lightbox/css/lightbox.css'
 
 = link_to 'Добавить изображение', new_admin_gimage_path, class: 'btn btn-success'
 %br
@@ -6,6 +8,6 @@
   = grid(@gimages_grid, upper_pagination_panel: true) do |g|
     - g.blank_slate content_tag(:div, 'У вас пока нет фото')
     - g.column name: 'Изображение' do |image|
-      - image_tag image.file.url
+      - link_to(image_tag(image.file.url(:thumb), style: 'height: 150px', class: 'img-polaroid'), image.file.url(:original), 'data-lightbox' => "roadtrip")
     - g.column do |image|
-      - link_to('Destroy', [:admin, image], method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' })
+      - link_to('Удалить', [:admin, image], method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' })

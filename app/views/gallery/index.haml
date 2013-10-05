@@ -1,0 +1,4 @@
+= javascript_include_tag 'lightbox/js/lightbox-2.6.min.js'
+= stylesheet_link_tag 'lightbox/css/lightbox.css'
+- @images.each do |image|
+  = link_to(image_tag(image.file.url(:thumb), style: 'height: 200px', class: 'img-polaroid'), image.file.url(:original), 'data-lightbox' => "roadtrip")
