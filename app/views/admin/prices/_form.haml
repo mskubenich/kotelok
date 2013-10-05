@@ -1,0 +1,15 @@
+- if @prices_page.errors.any?
+  - @prices_page.errors.full_messages.each do |msg|
+    .alert.alert-error
+      %button.close{type: :button, 'data-dismiss' => 'alert'}
+      = msg
+= form_for(@prices_page, url: @prices_page.id ? admin_price_path(@prices_page) : admin_prices_path, method: @prices_page.id ? :put : :post) do |f|
+  .field
+    %br
+    = f.cktext_area :body, :ckeditor => {:language => "ru"}
+
+  .actions.text-center
+    %br
+    = f.submit 'Сохранить изменения', class: 'btn btn-success'
+= content_for :assets do
+  = javascript_include_tag 'ckeditor/init'

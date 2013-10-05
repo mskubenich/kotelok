@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130915115551) do
+ActiveRecord::Schema.define(:version => 20131005094212) do
 
   create_table "boilers", :force => true do |t|
     t.string   "title"
@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(:version => 20130915115551) do
 
   create_table "documentations", :force => true do |t|
     t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "price_pages", :force => true do |t|
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

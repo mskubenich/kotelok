@@ -15,4 +15,8 @@ module ApplicationHelper
     Documentation.first
   end
 
+  def price_page
+    PricePage.first
+  end
+
 end

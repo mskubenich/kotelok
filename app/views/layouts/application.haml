@@ -29,7 +29,6 @@
               Контакты:
             %br
             %span.info-bold
-              тел.:
             = admin.phone
             %br
             %span.info-bold
@@ -43,6 +42,8 @@
             = link_to 'Запчасти', spares_path, class: 'info-bold'
           %li{class: "#{'active' if @tab == 'docs'}"}
             = link_to 'Документация', documentations_path, class: 'info-bold'
+          %li{class: "#{'active' if @tab == 'price'}"}
+            = link_to 'Цены', prices_path, class: 'info-bold'
       .page-content
         .sidebar
           - if current_user
@@ -63,6 +64,8 @@
             = link_to 'Запчасти', admin_spares_path, class: 'info-bold'
             %br
             = link_to 'Документация', admin_documentations_path, class: 'info-bold'
+            %br
+            = link_to 'Цены', admin_prices_path, class: 'info-bold'
         .page
           - if flash[:error]
             .alert.alert-error
