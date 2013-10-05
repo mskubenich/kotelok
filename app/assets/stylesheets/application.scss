@@ -24,6 +24,7 @@
     height: 100%;
     width: 50%;
     background-size: cover;
+    background-position: center;
   }
   .header-gradient{
     position: absolute;
@@ -44,17 +45,17 @@
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    height: 100%;
-    left: 0;
+    height: 84%;
+    left: 20px;
     top: 0;
-    width: 200px;
+    width: 170px;
   }
   .logo-text{
     position: absolute;
     font-weight: bold;
     font-style: italic;
     font-size: 100px;
-    padding-left: 200px;
+    padding-left: 180px;
     padding-top: 113px;
   }
   .header-info{
