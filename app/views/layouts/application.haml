@@ -75,6 +75,12 @@
             = link_to 'Цены', admin_prices_path, class: 'info-bold'
             %br
             = link_to 'Галерея', admin_gimages_path, class: 'info-bold'
+            %br
+          %br
+          - Gimage.where(id: Gimage.pluck(:id)).limit(3).each do |img|
+            = image_tag img.file.url(:thumb), style: 'width: 100%'
+            %br
+            %br
         .page
           - if flash[:error]
             .alert.alert-error
