@@ -12,6 +12,10 @@ gem "ckeditor", "~> 4.0.2"
 gem 'will_paginate'
 gem "wice_grid", '3.2.1'
 gem 'will_paginate-bootstrap'
+gem 'therubyracer', :platform => :ruby
+gem 'execjs'
+
+gem 'passenger'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,7 +26,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  #gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '>= 1.0.3'
 end
 
 
