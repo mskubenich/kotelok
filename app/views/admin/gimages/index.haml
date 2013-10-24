@@ -4,10 +4,16 @@
 = link_to 'Добавить изображение', new_admin_gimage_path, class: 'btn btn-success'
 %br
 %br
-.grid
-  = grid(@gimages_grid, upper_pagination_panel: true) do |g|
-    - g.blank_slate content_tag(:div, 'У вас пока нет фото')
-    - g.column name: 'Изображение' do |image|
-      - link_to(image_tag(image.file.url(:thumb), style: 'height: 150px', class: 'img-polaroid'), image.file.url(:original), 'data-lightbox' => "roadtrip")
-    - g.column do |image|
-      - link_to('Удалить', [:admin, image], method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' })
+%table.table.table-striped
+  %thead
+    %tr
+      %th
+        Изображение
+      %th
+  %tbody
+    - @gimages.each do |image|
+      %tr
+        %td
+          - link_to(image_tag(image.file.url(:thumb), style: 'height: 150px', class: 'img-polaroid'), image.file.url(:original), 'data-lightbox' => "roadtrip")
+        %td
+          - link_to('Удалить', [:admin, image], method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' })

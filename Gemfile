@@ -10,7 +10,6 @@ gem 'twitter-bootstrap-rails'
 gem "paperclip"
 gem "ckeditor", "~> 4.0.2"
 gem 'will_paginate'
-gem "wice_grid", '3.2.1'
 gem 'will_paginate-bootstrap'
 gem 'therubyracer', :platform => :ruby
 gem 'execjs'

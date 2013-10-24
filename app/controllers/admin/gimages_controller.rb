@@ -3,7 +3,7 @@
 class Admin::GimagesController < ApplicationController
 
   def index
-    @gimages_grid = initialize_grid(Gimage)
+    @gimages = Gimage.all
   end
 
   def new

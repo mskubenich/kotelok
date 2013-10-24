@@ -10,6 +10,8 @@ development:
   password: remeta
   pool: 5
   timeout: 5000
+  reconnect: false
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,6 +23,8 @@ test:
   password: remeta
   pool: 5
   timeout: 5000
+  reconnect: false
+
 
 production:
   adapter: mysql2
@@ -29,3 +33,4 @@ production:
   password: remeta
   pool: 5
   timeout: 5000
+  reconnect: false
