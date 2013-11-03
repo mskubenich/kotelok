@@ -4,7 +4,7 @@
     %title
       = yield(:title)
   = stylesheet_link_tag "application", controller_path, :media => "all"
-  //= javascript_include_tag "application", controller_path
+  = javascript_include_tag "application", controller_path
   = csrf_meta_tags
   = yield :assets
   %meta{ name: 'keywords', content: meta_keywords }
@@ -38,12 +38,12 @@
                   %td{style: 'width: 23%; vertical-align: top;'}
                     %i.icon-phone
                   %td
-                  //  = raw admin.phone
+                    = raw admin.phone
                 %tr
                   %td{style: ' vertical-align: top;'}
                     %i.icon-envelope
                   %td
-                  //  = admin.email
+                    = admin.email
       .menu
         %ul
           %li{class: "#{'active' if @tab == 'boilers'}"}
