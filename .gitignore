@@ -18,3 +18,5 @@
 /public/assets
 
 .sass-cache
+
+public/ckeditor_assets/
