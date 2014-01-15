@@ -9,7 +9,7 @@
   = yield :assets
   %meta{ name: 'keywords', content: meta_keywords }
   %meta{ name: 'description', content: meta_description }
-  %meta{ name:"google-site-verification", content:"_qPI9RdaRnbkBM8JmsLLqQxYHFEJtHhVluCdyT63SCM" }
+  %meta{ name: "google-site-verification", content: "_qPI9RdaRnbkBM8JmsLLqQxYHFEJtHhVluCdyT63SCM" }
 
 
 %body
@@ -37,13 +37,11 @@
                 %tr
                   %td{style: 'width: 23%; vertical-align: top;'}
                     %i.icon-phone
-                  %td
-                    = raw admin.phone
+
                 %tr
                   %td{style: ' vertical-align: top;'}
                     %i.icon-envelope
-                  %td
-                    = admin.email
+
       .menu
         %ul
           %li{class: "#{'active' if @tab == 'boilers'}"}
@@ -56,6 +54,13 @@
             = link_to 'Цены', prices_path, class: 'info-bold'
           %li{class: "#{'active' if @tab == 'gallery'}"}
             = link_to 'Галерея', gallery_index_path, class: 'info-bold'
+          .social-links
+            %a{href: 'https://www.facebook.com/pages/Korad-%D0%A2%D0%B2%D0%B5%D1%80%D0%B4%D0%BE%D1%82%D0%BE%D0%BF%D0%BB%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BE%D1%82%D0%BB%D1%8B/217013971809614?ref=hl'}
+              =image_tag('Facebook.png', :style=>'height:30px')
+            %a{href: 'http://vk.com/koradkotlu'}
+              =image_tag('vk_logo.png', :style=>'height:30px')
+            %a{href: 'https://plus.google.com/u/0/b/111772461615397103430/111772461615397103430/posts'}
+              =image_tag('google_icon.png', :style=>'height:30px')
       .page-content
         .sidebar
           - if current_user
