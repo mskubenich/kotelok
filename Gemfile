@@ -13,7 +13,6 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'therubyracer', :platform => :ruby
 gem 'execjs'
-gem 'rack-google_analytics', :require => "rack/google_analytics"
 gem 'passenger'
 
 # Gems used only for assets and not required
