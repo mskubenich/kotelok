@@ -13,7 +13,7 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'therubyracer', :platform => :ruby
 gem 'execjs'
-
+gem 'rack-google_analytics', :require => "rack/google_analytics"
 gem 'passenger'
 
 # Gems used only for assets and not required
@@ -28,9 +28,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :production do
-  gem 'rack-google_analytics', :require => "rack/google_analytics"
-end
+
+
+
 
 
 # To use ActiveModel has_secure_password
