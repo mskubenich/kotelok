@@ -6,7 +6,6 @@
   = stylesheet_link_tag "application", controller_path, :media => "all"
   = javascript_include_tag "application", controller_path
   = csrf_meta_tags
-  = render :partial => 'layouts/ga'
   = yield :assets
   %meta{ name: 'keywords', content: meta_keywords }
   %meta{ name: 'description', content: meta_description }
@@ -14,6 +13,7 @@
 
 
 %body
+  = render :partial => 'layouts/ga'
   %br
   .row-fluid
     .span10.offset1.page-container
