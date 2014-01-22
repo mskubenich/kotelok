@@ -4,7 +4,7 @@
 # User-Agent: *
 # Disallow: /
 User-agent: *
-Host: http://korad.org.ua
+Host: korad.org.ua
 Sitemap: http://korad.org.ua/sitemap.xml
-Disallow: /users‎
+Disallow: /users
 
