@@ -3,3 +3,8 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-Agent: *
 # Disallow: /
+User-agent: *
+Host: http://korad.org.ua
+Sitemap: http://korad.org.ua/sitemap.xml
+Disallow: /users‎
+
