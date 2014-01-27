@@ -4,8 +4,8 @@
 # User-Agent: *
 # Disallow: /
 User-agent: *
-Disallow: /users
-Disallow: /admin
+Disallow: /users/
+Disallow: /admin/
 Sitemap: http://korad.org.ua/sitemap.xml
 
 
