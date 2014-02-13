@@ -17,3 +17,5 @@
 //= require twitter/bootstrap/bootstrap-collapse
 //= require twitter/bootstrap/bootstrap-carousel
 //= require bootstrap-fileupload.min
+//= require google_analytics
+
